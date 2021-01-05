@@ -22,4 +22,4 @@ EVA_TARGET_PACKAGE := $(PRODUCT_OUT)/$(EVA_VERSION).zip
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(EVA_TARGET_PACKAGE)
 	@echo "Package Complete: $(EVA_TARGET_PACKAGE)" >&2
-	@echo "Package size: `du -h $(EVA_TARGET_PACKAGE) | cut -f 1`"
+	@echo "Package size: $(EVA_TARGET_PACKAGE)"
