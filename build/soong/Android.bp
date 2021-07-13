@@ -1,8 +1,8 @@
 // LineageOS soong configs
 
 bootstrap_go_package {
-    name: "soong-statix-generator",
-    pkgPath: "statix/soong/generator",
+    name: "soong-eva-generator",
+    pkgPath: "eva/soong/generator",
     deps: [
         "blueprint",
         "blueprint-pathtools",
@@ -17,7 +17,7 @@ bootstrap_go_package {
     pluginFor: ["soong_build"],
 }
 
-statix_generator {
+eva_generator {
     name: "generated_kernel_includes",
 
     // The headers make command
@@ -49,7 +49,7 @@ cc_library_headers {
 soong_config_module_type {
     name: "gralloc_10_usage_bits",
     module_type: "cc_defaults",
-    config_namespace: "statixGlobalVars",
+    config_namespace: "evaGlobalVars",
     value_variables: ["additional_gralloc_10_usage_bits"],
     properties: ["cppflags"],
 }
@@ -66,7 +66,7 @@ gralloc_10_usage_bits {
 soong_config_module_type {
     name: "target_process_sdk_version_overrides",
     module_type: "cc_defaults",
-    config_namespace: "statixGlobalVars",
+    config_namespace: "evaGlobalVars",
     value_variables: ["target_process_sdk_version_override"],
     properties: ["cppflags"],
 }
@@ -83,7 +83,7 @@ target_process_sdk_version_overrides {
 soong_config_module_type {
     name: "target_shim_libs",
     module_type: "cc_defaults",
-    config_namespace: "statixGlobalVars",
+    config_namespace: "evaGlobalVars",
     value_variables: ["target_ld_shim_libs"],
     properties: ["cppflags"],
 }
@@ -100,7 +100,7 @@ target_shim_libs {
 soong_config_module_type {
     name: "vendor_init",
     module_type: "cc_defaults",
-    config_namespace: "statixGlobalVars",
+    config_namespace: "evaGlobalVars",
     value_variables: ["target_init_vendor_lib"],
     properties: ["whole_static_libs"],
 }
@@ -117,7 +117,7 @@ vendor_init {
 soong_config_module_type {
     name: "surfaceflinger_fod_lib",
     module_type: "cc_defaults",
-    config_namespace: "statixGlobalVars",
+    config_namespace: "evaGlobalVars",
     value_variables: ["target_surfaceflinger_fod_lib"],
     properties: [
         "cppflags",
@@ -138,7 +138,7 @@ surfaceflinger_fod_lib {
 soong_config_module_type {
     name: "bootloader_message_offset",
     module_type: "cc_defaults",
-    config_namespace: "statixGlobalVars",
+    config_namespace: "evaGlobalVars",
     value_variables: ["bootloader_message_offset"],
     properties: ["cflags"],
 }
@@ -156,7 +156,7 @@ bootloader_message_offset {
 soong_config_module_type {
     name: "librmnetctl_pre_uplink",
     module_type: "cc_defaults",
-    config_namespace: "statixQcomVars",
+    config_namespace: "evaQcomVars",
     bool_variables: ["uses_pre_uplink_features_netmgrd"],
     properties: ["cflags"],
 }
@@ -173,7 +173,7 @@ librmnetctl_pre_uplink {
 soong_config_module_type {
     name: "qti_camera_device",
     module_type: "cc_defaults",
-    config_namespace: "statixQcomVars",
+    config_namespace: "evaQcomVars",
     bool_variables: ["uses_qti_camera_device"],
     properties: [
         "cppflags",
@@ -194,7 +194,7 @@ qti_camera_device {
 soong_config_module_type {
     name: "extended_compress_format",
     module_type: "cc_defaults",
-    config_namespace: "statixQcomVars",
+    config_namespace: "evaQcomVars",
     bool_variables: ["supports_extended_compress_format"],
     properties: ["cflags"],
 }
@@ -211,7 +211,7 @@ extended_compress_format {
 soong_config_module_type {
     name: "qti_cryptfshw_qsee",
     module_type: "cc_defaults",
-    config_namespace: "statixQcomVars",
+    config_namespace: "evaQcomVars",
     bool_variables: ["should_wait_for_qsee"],
     properties: ["cflags"],
 }
@@ -228,7 +228,7 @@ qti_cryptfshw_qsee {
 soong_config_module_type {
     name: "surfaceflinger_qcom_extensions",
     module_type: "cc_defaults",
-    config_namespace: "statixQcomVars",
+    config_namespace: "evaQcomVars",
     value_variables: ["qcom_display_headers_namespace"],
     properties: [
         "cppflags",

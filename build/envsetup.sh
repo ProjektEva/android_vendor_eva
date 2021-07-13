@@ -9,10 +9,10 @@ EOF
 function breakfast()
 {
     target=$1
-    STATIX_DEVICES_ONLY="true"
+    EVA_DEVICES_ONLY="true"
     unset LUNCH_MENU_CHOICES
     add_lunch_combo full-eng
-    for f in `/bin/ls vendor/statix/vendorsetup.sh 2> /dev/null`
+    for f in `/bin/ls vendor/eva/vendorsetup.sh 2> /dev/null`
         do
             echo "including $f"
             . $f
@@ -29,8 +29,8 @@ function breakfast()
             # A buildtype was specified, assume a full device name
             lunch $target
         else
-            # This is probably just the StatiX model name
-            lunch statix_$target-userdebug
+            # This is probably just the Eva model name
+            lunch eva_$target-userdebug
         fi
     fi
     return $?
@@ -53,7 +53,7 @@ function brunch()
 function repopick() {
     set_stuff_for_environment
     T=$(gettop)
-    $T/vendor/statix/build/tools/repopick.py $@
+    $T/vendor/eva/build/tools/repopick.py $@
 }
 
 function aospmerge()
@@ -61,7 +61,7 @@ function aospmerge()
     target_branch=$1
     set_stuff_for_environment
     T=$(gettop)
-    python3 $T/vendor/statix/scripts/merge-aosp.py target_branch
+    python3 $T/vendor/eva/scripts/merge-aosp.py target_branch
 }
 
 export GLOBAL_THINLTO=true

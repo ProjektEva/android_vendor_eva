@@ -50,7 +50,7 @@ if [ ! -r /system/build.prop ]; then
     return 0
 fi
 
-if ( ! grep -q "^ro.statix.version=$V.*" /system/build.prop ); then
+if ( ! grep -q "^ro.eva.version=$V.*" /system/build.prop ); then
   echo "Not backing up files from incompatible version: $V"
   return 0
 fi

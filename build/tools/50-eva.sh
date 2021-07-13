@@ -1,6 +1,6 @@
 #!/sbin/sh
 #
-# /system/addon.d/50-statix.sh
+# /system/addon.d/50-eva.sh
 # During an upgrade, this script backs up /system/etc/hosts,
 # ADDOND_VERSION=2
 #
