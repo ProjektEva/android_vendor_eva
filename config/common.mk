@@ -75,6 +75,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_DISPLAY_ID="$(BUILD_ID)-$(TARGET_BUILD_VARIANT)"
 
+# Gsm
+include vendor/eva/config/gsm.mk
+
 # Packages
 include vendor/eva/config/packages.mk
 
